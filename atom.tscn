@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://5d6sslxl0ur8"]
+
+[ext_resource type="Texture2D" uid="uid://dxavfygp2230u" path="res://atom.png" id="1_gdw2q"]
+
+[sub_resource type="GDScript" id="GDScript_gdw2q"]
+script/source = "extends Area2D
+@onready var sprite_2d: CharacterBody2D = $\"../CharacterBody2D\"
+@onready var character = get_node(\"../CharacterBody2D\") as Node2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdw2q"]
+size = Vector2(30, 27)
+
+[node name="atom" type="Area2D" unique_id=2130945915]
+script = SubResource("GDScript_gdw2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=778440515]
+texture = ExtResource("1_gdw2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1088387999]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_gdw2q")
